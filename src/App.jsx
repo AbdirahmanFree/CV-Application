@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import '../styles/App.css'
-import {Header} from './Header.jsx'
+import './App.css'
+import {Header} from './components/Header.jsx'
+import { Builder } from './components/Builder.jsx'
+import { Resume } from './components/Resume.jsx'
 
 function App() {
   const [cvData, setCvData] = useState({
@@ -54,7 +56,11 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
+        <Header />
+        <div className='Content'>
+          <Builder />
+          <Resume />
+        </div>
     </div>
   )
 }
