@@ -4,6 +4,7 @@
   display:flex;
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
+  margin: 0px;
 }
 
 .Header {

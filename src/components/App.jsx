@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
 import '../styles/App.css'
+import {Header} from './Header.jsx'
 
 function App() {
   
 
   return (
     <div className='App'>
-      <h1 className='Header'>CV Application</h1>
+      <Header />
     </div>
   )
 }
