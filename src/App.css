@@ -2,18 +2,9 @@
 
 .App {
   display:flex;
+  flex-direction: column;
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
   margin: 0px;
 }
 
-.Header {
-  text-shadow: none;
-  transition: text-shadow 0.5s ease-in-out, rgb(99, 98, 98) 0.5s ease-in-out;
-  color: black;
-
-}
-
-.Header:hover {
-  text-shadow: 2px 2px 5px black;
-}
