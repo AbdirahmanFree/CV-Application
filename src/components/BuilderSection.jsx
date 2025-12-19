@@ -3,8 +3,9 @@ import "../styles/BuilderSection.css"
 function BuilderSection({ section, sectionData, setCvData}){
     if(section ==="personal"){
         return (
-        <div className="personal">
-            <input />
+        <div className="section">
+            <label for="name">Name:</label>
+            <input name="name"/>
         </div>
         )
     }

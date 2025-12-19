@@ -1,0 +1,7 @@
+.section {
+    border: 2px solid purple;
+    width: 400px;
+    height: 100px;
+    border-radius: 25px;
+    padding: 10px;
+}
