@@ -3,11 +3,11 @@ import '../styles/Builder.css'
 function Builder({cvData, setCvData}){
     return (
         <div className='content'>
-            <Section personal={cvData.personal} setCvData={setCvData} />
-            <Section personal={cvData.education} setCvData={setCvData} />
-            <Section personal={cvData.experience} setCvData={setCvData} />
-            <Section personal={cvData.projects} setCvData={setCvData} />
-            <Section personal={cvData.skills} setCvData={setCvData} />
+            <BuilderSection personal={cvData.personal} setCvData={setCvData} />
+            <BuilderSection education={cvData.education} setCvData={setCvData} />
+            <BuilderSection experience={cvData.experience} setCvData={setCvData} />
+            <BuilderSection projects={cvData.projects} setCvData={setCvData} />
+            <BuilderSection skills={cvData.skills} setCvData={setCvData} />
         </div>
     )
 }
