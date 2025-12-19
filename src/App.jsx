@@ -58,8 +58,8 @@ function App() {
     <div className='App'>
         <Header />
         <div className='Content'>
-          <Builder />
-          <Resume />
+          <Builder cvData={cvData} />
+          <Resume cvData={cvData} />
         </div>
     </div>
   )
