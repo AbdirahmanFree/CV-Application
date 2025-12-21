@@ -13,8 +13,8 @@ function BuilderSection({ section, sectionData, setCvData}){
             console.log(sectionData)
             setCvData(prev => ({
                 ...prev,
-                section: {
-                    ...section,
+                'personal': {
+                    ...prev.personal,
                     'name': name,
                     'number': number,
                     'email': email,
