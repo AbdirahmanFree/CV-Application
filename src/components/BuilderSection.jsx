@@ -1,5 +1,4 @@
 import "../styles/BuilderSection.css"
-import { useEffect } from "react"
 
 function BuilderSection({ section, sectionData, setCvData}){
     if(section ==="personal"){
