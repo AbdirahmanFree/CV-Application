@@ -11,7 +11,7 @@ function App() {
       'number': '',
       'email': '',
       'linkedIn': '',
-      'gitHub': '',
+      'portfolio': '',
     },
     'education': [
       {

@@ -1,9 +1,9 @@
 .section {
-    border: 2px solid purple;
+    border-bottom: 2px solid black;
     width: 400px;
     height: 100px;
     min-height: max-content;
-    border-radius: 25px;
+    
     padding: 10px;
 }
 

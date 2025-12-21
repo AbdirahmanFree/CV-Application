@@ -1,9 +1,33 @@
 import "../styles/BuilderSection.css"
+import { useEffect } from "react"
 
 function BuilderSection({ section, sectionData, setCvData}){
     if(section ==="personal"){
+        function handleSubmit(e){
+            e.preventDefault()
+            const form = e.currentTarget
+            const email = form.email.value
+            const name = form.name.value
+            const number = form.number.value
+            const portfolio = form.portfolio.value 
+            const linkedIn = form.linkedin.value
+            console.log(sectionData)
+            setCvData(prev => ({
+                ...prev,
+                section: {
+                    ...section,
+                    'name': name,
+                    'number': number,
+                    'email': email,
+                    'linkedIn': linkedIn,
+                    'portfolio': portfolio
+                    
+                }
+            }))
+
+        }
         return (
-        <form className="section">
+        <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="John Doe"/>
@@ -25,6 +49,7 @@ function BuilderSection({ section, sectionData, setCvData}){
                 <label for="portfolio">Portfolio: </label>
                 <input type="text" id="portfolio" name="portfolio" placeholder="https://github.com/username"/>
             </div>
+            <button type="submit">Save</button>
         </form>
         )
     }
