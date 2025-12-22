@@ -3,7 +3,7 @@ import { ResumeSection } from './ResumeSection.jsx'
 
 function Resume({cvData}){
     return (
-        <div className='content'>
+        <div className='resume-container'>
             <ResumeSection section="personal" sectionData={cvData.personal} />
         </div>
     )
