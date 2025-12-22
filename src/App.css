@@ -6,10 +6,17 @@
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
   margin: 0px;
+  min-width: max-content;
 }
 
 .content {
   margin: 10px;
   
+}
+
+.Content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
