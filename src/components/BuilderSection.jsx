@@ -1,6 +1,9 @@
+import { useState } from "react"
 import "../styles/BuilderSection.css"
 
 function BuilderSection({ section, sectionData, setCvData}){
+    const [bullets, setBullets] = useState([''])
+    const [sections, setSections] = useState([''])
     if(section ==="personal"){
         function handleSubmit(e){
             e.preventDefault()
@@ -24,7 +27,7 @@ function BuilderSection({ section, sectionData, setCvData}){
                 }
             }))
 
-        }
+        }   
         return (
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
@@ -53,9 +56,55 @@ function BuilderSection({ section, sectionData, setCvData}){
         )
     }
     if(section ==="education"){
+        function handleSubmit(e){
+            e.preventDefault()
+            const form = e.currentTarget
+            const school = form.school.value
+            const location = form.location.value
+            const degree = form.degree.value
+            const start = form.start.value
+            const end = form.end.value
+            const bullets = []
+
+        }
         return (
-        <>
-        </>
+        <form className="section">
+            <div className="field">
+                <label for="school">School: </label>
+                <input type="text" id="school" name="school" placeholder="Toronto Metropolitan University"/>
+            </div>
+
+            <div className="field">
+                <label for="location">Location: </label>
+                <input type="text" id="location" name="location" placeholder="Toronto, ON"/>
+            </div>
+            <div className="field">
+                <label for="degree">Degree: </label>
+                <input type="text" id="degree" name="degree" placeholder="Bachelor of Science in Computer Science"/>
+            </div>
+            <div className="field">
+                <label for="start">Start Date: </label>
+                <input type="text" id="start" name="start" placeholder="Sept 2023"/>
+            </div>
+            <div className="field">
+                <label for="end">End Date: </label>
+                <input type="text" id="end" name="end" placeholder="Apr 2027"/>
+            </div>
+
+            <div className="bullets">
+                {bullets.map((bullet,index) => (
+                    <div className="field">
+                        <label for={bullet}>Bullet: </label>
+                        <input type="text" id={bullet} value={bullet} onChange={handleBulletChange}/>
+                    </div>
+                )) 
+
+                }
+
+            </div>
+            
+            <button type="submit">Save</button>
+        </form>
         )
     }
     if(section ==="experience"){

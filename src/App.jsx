@@ -13,8 +13,7 @@ function App() {
       'linkedIn': '',
       'portfolio': '',
     },
-    'education': [
-      {
+    'education': {
         'id': crypto.randomUUID(),
         'school': '',
         'location': '',
@@ -22,8 +21,8 @@ function App() {
         'start': '',
         'end': '',
         'bullets': [],
-      },
-    ],
+    },
+    
     'experience': [
       {
         'id': crypto.randomUUID(),
