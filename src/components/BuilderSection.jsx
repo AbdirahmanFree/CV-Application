@@ -2,7 +2,7 @@ import { useState } from "react"
 import "../styles/BuilderSection.css"
 
 function BuilderSection({ section, sectionData, setCvData}){
-    const [bullets, setBullets] = useState([{'id': crypto.randomUUID(), 'text': ''}])
+    const [bullets, setBullets] = useState(sectionData.bullets)
     const [sections, setSections] = useState([''])
     if(section ==="personal"){
         function handleSubmit(e){
@@ -32,24 +32,24 @@ function BuilderSection({ section, sectionData, setCvData}){
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name"/>
+                <input type="text" id="name" name="name" value={sectionData.name}/>
             </div>
 
             <div className="field">
                 <label htmlFor="number">Phone number: </label>
-                <input type="text" id="number" name="number" />
+                <input type="text" id="number" name="number" value={sectionData.number} />
             </div>
             <div className="field">
                 <label htmlFor="email">Email: </label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" value={sectionData.email} />
             </div>
             <div className="field">
                 <label htmlFor="linkedin">LinkedIn: </label>
-                <input type="text" id="linkedin" name="linkedin" />
+                <input type="text" id="linkedin" name="linkedin" value={sectionData.linkedIn} />
             </div>
             <div className="field">
                 <label htmlFor="portfolio">Portfolio: </label>
-                <input type="text" id="portfolio" name="portfolio"/>
+                <input type="text" id="portfolio" name="portfolio" value={sectionData.portfolio}/>
             </div>
             <button type="submit">Save</button>
         </form>
@@ -102,24 +102,24 @@ function BuilderSection({ section, sectionData, setCvData}){
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="school">School: </label>
-                <input type="text" id="school" name="school"/>
+                <input type="text" id="school" name="school" value={sectionData.school}/>
             </div>
 
             <div className="field">
                 <label htmlFor="location">Location: </label>
-                <input type="text" id="location" name="location"/>
+                <input type="text" id="location" name="location" value={sectionData.location}/>
             </div>
             <div className="field">
                 <label htmlFor="degree">Degree: </label>
-                <input type="text" id="degree" name="degree"/>
+                <input type="text" id="degree" name="degree" value={sectionData.degree}/>
             </div>
             <div className="field">
                 <label htmlFor="start">Start Date: </label>
-                <input type="text" id="start" name="start"/>
+                <input type="text" id="start" name="start" value={sectionData.start}/>
             </div>
             <div className="field">
                 <label htmlFor="end">End Date: </label>
-                <input type="text" id="end" name="end"/>
+                <input type="text" id="end" name="end" value={sectionData.end}/>
             </div>
 
             <div className="bullets">
