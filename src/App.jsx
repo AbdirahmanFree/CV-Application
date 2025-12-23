@@ -39,7 +39,7 @@ function App() {
         'id': crypto.randomUUID(),
         'title': '',
         'technologies': '',
-        'bullets': [],
+        'bullets': [{'id': crypto.randomUUID(), 'text': ''}],
       },
     ],
     'skills': [

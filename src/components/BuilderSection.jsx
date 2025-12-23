@@ -2,7 +2,7 @@ import { useState } from "react"
 import "../styles/BuilderSection.css"
 
 function BuilderSection({ section, sectionData, setCvData}){
-    const [bullets, setBullets] = useState([''])
+    const [bullets, setBullets] = useState([{'id': crypto.randomUUID(), 'text': ''}])
     const [sections, setSections] = useState([''])
     if(section ==="personal"){
         function handleSubmit(e){
@@ -31,24 +31,24 @@ function BuilderSection({ section, sectionData, setCvData}){
         return (
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
-                <label for="name">Name:</label>
+                <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="John Doe"/>
             </div>
 
             <div className="field">
-                <label for="number">Phone number: </label>
+                <label htmlFor="number">Phone number: </label>
                 <input type="text" id="number" name="number" placeholder="012-345-6789"/>
             </div>
             <div className="field">
-                <label for="email">Email: </label>
+                <label htmlFor="email">Email: </label>
                 <input type="email" id="email" name="email" placeholder="username@gmail.com"/>
             </div>
             <div className="field">
-                <label for="linkedin">LinkedIn: </label>
+                <label htmlFor="linkedin">LinkedIn: </label>
                 <input type="text" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/username/"/>
             </div>
             <div className="field">
-                <label for="portfolio">Portfolio: </label>
+                <label htmlFor="portfolio">Portfolio: </label>
                 <input type="text" id="portfolio" name="portfolio" placeholder="https://github.com/username"/>
             </div>
             <button type="submit">Save</button>
@@ -64,42 +64,77 @@ function BuilderSection({ section, sectionData, setCvData}){
             const degree = form.degree.value
             const start = form.start.value
             const end = form.end.value
-            const bullets = []
+
+            setCvData(prev => ({
+                ...prev,
+                'education': {
+                    ...prev.section,
+                    'school': school,
+                    'location': location,
+                    'degree': degree,
+                    'start' : start,
+                    'end': end,
+                    'bullets': bullets,
+
+                }
+            }))
 
         }
+
+        function handleBulletChange(id, value){
+            setBullets(prevBullets => 
+                prevBullets.map((b,i) =>(b.id== id ? {...b, 'text': value} : b))
+            )
+
+        }
+
+        function addBullet(){
+            setBullets(prevBullets => [...prevBullets, {'id': crypto.randomUUID(), 'text' : ''}]
+            )
+        }
+
+        function removeBullet(id){
+            setBullets(prev => prev.filter(b => b.id != id))
+        }
+
+
         return (
-        <form className="section">
+        <form className="section" onSubmit={handleSubmit}>
             <div className="field">
-                <label for="school">School: </label>
+                <label htmlFor="school">School: </label>
                 <input type="text" id="school" name="school" placeholder="Toronto Metropolitan University"/>
             </div>
 
             <div className="field">
-                <label for="location">Location: </label>
+                <label htmlFor="location">Location: </label>
                 <input type="text" id="location" name="location" placeholder="Toronto, ON"/>
             </div>
             <div className="field">
-                <label for="degree">Degree: </label>
+                <label htmlFor="degree">Degree: </label>
                 <input type="text" id="degree" name="degree" placeholder="Bachelor of Science in Computer Science"/>
             </div>
             <div className="field">
-                <label for="start">Start Date: </label>
+                <label htmlFor="start">Start Date: </label>
                 <input type="text" id="start" name="start" placeholder="Sept 2023"/>
             </div>
             <div className="field">
-                <label for="end">End Date: </label>
+                <label htmlFor="end">End Date: </label>
                 <input type="text" id="end" name="end" placeholder="Apr 2027"/>
             </div>
 
             <div className="bullets">
-                {bullets.map((bullet,index) => (
+                {bullets.map(bullet => (
                     <div className="field">
-                        <label for={bullet}>Bullet: </label>
-                        <input type="text" id={bullet} value={bullet} onChange={handleBulletChange}/>
+                        <label htmlFor={bullet.id}>Bullet: </label>
+                        <input type="text" id={bullet.id} value={bullet.text}
+                        onChange={(e) => handleBulletChange(bullet.id, e.target.value)}
+                        />
+                        <button type= "button" onClick={() => removeBullet(bullet.id)}>X</button>
                     </div>
                 )) 
 
                 }
+                <button type ="button" onClick={addBullet}>Add</button>
 
             </div>
             
