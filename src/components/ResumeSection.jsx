@@ -15,6 +15,14 @@ function ResumeSection({ section, sectionData}){
             </div>
         )
     }
+    if (section == "education") {
+        return (
+            <div className='education content'>
+                <div className='heading'>Education</div>
+
+            </div>
+        )
+    }
 }
 
 export {ResumeSection}
