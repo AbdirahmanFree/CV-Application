@@ -32,24 +32,24 @@ function BuilderSection({ section, sectionData, setCvData}){
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="John Doe"/>
+                <input type="text" id="name" name="name"/>
             </div>
 
             <div className="field">
                 <label htmlFor="number">Phone number: </label>
-                <input type="text" id="number" name="number" placeholder="012-345-6789"/>
+                <input type="text" id="number" name="number" />
             </div>
             <div className="field">
                 <label htmlFor="email">Email: </label>
-                <input type="email" id="email" name="email" placeholder="username@gmail.com"/>
+                <input type="email" id="email" name="email" />
             </div>
             <div className="field">
                 <label htmlFor="linkedin">LinkedIn: </label>
-                <input type="text" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/username/"/>
+                <input type="text" id="linkedin" name="linkedin" />
             </div>
             <div className="field">
                 <label htmlFor="portfolio">Portfolio: </label>
-                <input type="text" id="portfolio" name="portfolio" placeholder="https://github.com/username"/>
+                <input type="text" id="portfolio" name="portfolio"/>
             </div>
             <button type="submit">Save</button>
         </form>
@@ -102,24 +102,24 @@ function BuilderSection({ section, sectionData, setCvData}){
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="school">School: </label>
-                <input type="text" id="school" name="school" placeholder="Toronto Metropolitan University"/>
+                <input type="text" id="school" name="school"/>
             </div>
 
             <div className="field">
                 <label htmlFor="location">Location: </label>
-                <input type="text" id="location" name="location" placeholder="Toronto, ON"/>
+                <input type="text" id="location" name="location"/>
             </div>
             <div className="field">
                 <label htmlFor="degree">Degree: </label>
-                <input type="text" id="degree" name="degree" placeholder="Bachelor of Science in Computer Science"/>
+                <input type="text" id="degree" name="degree"/>
             </div>
             <div className="field">
                 <label htmlFor="start">Start Date: </label>
-                <input type="text" id="start" name="start" placeholder="Sept 2023"/>
+                <input type="text" id="start" name="start"/>
             </div>
             <div className="field">
                 <label htmlFor="end">End Date: </label>
-                <input type="text" id="end" name="end" placeholder="Apr 2027"/>
+                <input type="text" id="end" name="end"/>
             </div>
 
             <div className="bullets">

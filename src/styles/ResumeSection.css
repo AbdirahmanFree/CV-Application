@@ -12,12 +12,35 @@ a {
     color: black;
 }
 
-.content {
+.container {
     margin: 15px;
 }
 .heading {
     font-size: 18px;
     width: 100%;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid grey;
     margin: 0px;
+}
+
+.bold {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: 200;
+}
+
+.section-field {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: 2px
+}
+
+ul {
+    margin-top: 5px;
+    padding: 0px;
+    padding-left: 15px;
 }
