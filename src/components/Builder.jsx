@@ -1,10 +1,11 @@
 import '../styles/Builder.css'
 import { BuilderSection } from './BuilderSection'
+import { PersonalSection } from './PersonalSection'
 
 function Builder({cvData, setCvData}){
     return (
         <div className='Builder-section'>
-            <BuilderSection section="personal" sectionData={cvData.personal} setCvData={setCvData} />
+            <PersonalSection sectionData={cvData.personal} setCvData={setCvData} />
             <BuilderSection section="education" sectionData={cvData.education} setCvData={setCvData} />
             <BuilderSection section="experience" sectionData={cvData.experience} setCvData={setCvData} />
             <BuilderSection section="projects" sectionData={cvData.projects} setCvData={setCvData} />
