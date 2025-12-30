@@ -70,16 +70,20 @@ function EducationSection({sectionData, setCvData}){
             <div className="bullets">
                 {bullets.map(bullet => (
                     <div className="field">
+                        
                         <label htmlFor={bullet.id}>Bullet: </label>
-                        <input type="text" id={bullet.id} placeholder={bullet.text}
-                        onChange={(e) => handleBulletChange(bullet.id, e.target.value)}
-                        />
-                        <button type= "button" onClick={() => removeBullet(bullet.id)}>X</button>
+                        <div className='bullet-container'>
+                            <input type="text" id={bullet.id} placeholder={bullet.text}
+                            onChange={(e) => handleBulletChange(bullet.id, e.target.value)}
+                            />
+                            <button type= "button" onClick={() => removeBullet(bullet.id)}>X</button>
+                        </div>
+
                     </div>
                 )) 
 
                 }
-                <button type ="button" onClick={addBullet}>Add</button>
+                <button type ="button" onClick={addBullet}>Add Bullet</button>
 
             </div>
             

@@ -21,3 +21,9 @@ input {
     padding: 5px;
 
 }
+
+.bullet-container {
+    display: flex;
+    min-width: max-content;
+    gap: 2px;
+}
