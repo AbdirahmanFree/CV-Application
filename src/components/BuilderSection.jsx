@@ -4,57 +4,6 @@ import "../styles/BuilderSection.css"
 function BuilderSection({ section, sectionData, setCvData}){
     const [bullets, setBullets] = useState(sectionData.bullets)
     const [sections, setSections] = useState(sectionData)
-    if(section ==="personal"){
-        function handleSubmit(e){
-            e.preventDefault()
-            const form = e.currentTarget
-            const email = form.email.value
-            const name = form.name.value
-            const number = form.number.value
-            const portfolio = form.portfolio.value 
-            const linkedIn = form.linkedin.value
-            console.log(sectionData)
-            setCvData(prev => ({
-                ...prev,
-                'personal': {
-                    ...prev.personal,
-                    'name': name,
-                    'number': number,
-                    'email': email,
-                    'linkedIn': linkedIn,
-                    'portfolio': portfolio
-                    
-                }
-            }))
-
-        }   
-        return (
-        <form className="section" onSubmit={handleSubmit}>
-            <div className="field">
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" value={sectionData.name}/>
-            </div>
-
-            <div className="field">
-                <label htmlFor="number">Phone number: </label>
-                <input type="text" id="number" name="number" value={sectionData.number} />
-            </div>
-            <div className="field">
-                <label htmlFor="email">Email: </label>
-                <input type="email" id="email" name="email" value={sectionData.email} />
-            </div>
-            <div className="field">
-                <label htmlFor="linkedin">LinkedIn: </label>
-                <input type="text" id="linkedin" name="linkedin" value={sectionData.linkedIn} />
-            </div>
-            <div className="field">
-                <label htmlFor="portfolio">Portfolio: </label>
-                <input type="text" id="portfolio" name="portfolio" value={sectionData.portfolio}/>
-            </div>
-            <button type="submit">Save</button>
-        </form>
-        )
-    }
     if(section ==="education"){
         function handleSubmit(e){
             e.preventDefault()

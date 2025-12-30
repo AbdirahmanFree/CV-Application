@@ -14,7 +14,6 @@ function App() {
       'portfolio': 'https://github.com/freddie-kruger',
     },
     'education': {
-        'id': crypto.randomUUID(),
         'school': 'Ohio State University',
         'location': 'Columbus, Ohio',
         'degree': 'Bachelor of Science in Criminology',
