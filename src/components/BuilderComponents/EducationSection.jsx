@@ -27,7 +27,7 @@ function EducationSection({sectionData, setCvData}){
     }
 
     function handleBulletChange(id, value){
-        setBullets(b => (b.id == id ? {...b, 'text': value} : b))
+        setBullets(b => b.map(bullet => (bullet.id == id ? ({...bullet, 'text': value}) : bullet )))
     }
 
     function addBullet(){
@@ -47,24 +47,24 @@ function EducationSection({sectionData, setCvData}){
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
                 <label htmlFor="school">School: </label>
-                <input type="text" id="school" name="school" value={sectionData.school}/>
+                <input type="text" id="school" name="school" placeholder={sectionData.school}/>
             </div>
 
             <div className="field">
                 <label htmlFor="location">Location: </label>
-                <input type="text" id="location" name="location" value={sectionData.location}/>
+                <input type="text" id="location" name="location" placeholder={sectionData.location}/>
             </div>
             <div className="field">
                 <label htmlFor="degree">Degree: </label>
-                <input type="text" id="degree" name="degree" value={sectionData.degree}/>
+                <input type="text" id="degree" name="degree" placeholder={sectionData.degree}/>
             </div>
             <div className="field">
                 <label htmlFor="start">Start Date: </label>
-                <input type="text" id="start" name="start" value={sectionData.start}/>
+                <input type="text" id="start" name="start" placeholder={sectionData.start}/>
             </div>
             <div className="field">
                 <label htmlFor="end">End Date: </label>
-                <input type="text" id="end" name="end" value={sectionData.end}/>
+                <input type="text" id="end" name="end" placeholder={sectionData.end}/>
             </div>
 
             <div className="bullets">
