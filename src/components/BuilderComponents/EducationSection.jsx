@@ -1,4 +1,4 @@
-import '../styles/BuilderSection.css'
+import '../../styles/BuilderSection.css'
 import { useState } from 'react'
 
 function EducationSection({sectionData, setCvData}){
@@ -30,6 +30,19 @@ function EducationSection({sectionData, setCvData}){
         setBullets(b => (b.id == id ? {...b, 'text': value} : b))
     }
 
+    function addBullet(){
+        const newBullet = [{
+            'id': crypto.randomUUID(),
+            'text': ''
+        }]
+        setBullets([...bullets,...newBullet])
+    }
+
+    function removeBullet(id){
+        const newBullets = bullets.filter(b => b.id != id)
+        setBullets(newBullets)
+    }
+
     return (
         <form className="section" onSubmit={handleSubmit}>
             <div className="field">
@@ -58,7 +71,7 @@ function EducationSection({sectionData, setCvData}){
                 {bullets.map(bullet => (
                     <div className="field">
                         <label htmlFor={bullet.id}>Bullet: </label>
-                        <input type="text" id={bullet.id} value={bullet.text}
+                        <input type="text" id={bullet.id} placeholder={bullet.text}
                         onChange={(e) => handleBulletChange(bullet.id, e.target.value)}
                         />
                         <button type= "button" onClick={() => removeBullet(bullet.id)}>X</button>
@@ -74,3 +87,5 @@ function EducationSection({sectionData, setCvData}){
         </form>
     )
 }
+
+export {EducationSection}

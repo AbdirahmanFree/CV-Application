@@ -1,5 +1,6 @@
 import '../styles/Resume.css'
-import { ResumeSection } from './ResumeSection.jsx'
+import { ResumeSection } from './ResumeComponents/ResumeSection'
+
 
 function Resume({cvData}){
     return (
@@ -9,5 +10,6 @@ function Resume({cvData}){
         </div>
     )
 }
+
 
 export {Resume}

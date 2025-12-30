@@ -1,4 +1,4 @@
-import '../styles/ResumeSection.css'
+import '../../styles/ResumeSection.css'
 
 function ResumeSection({ section, sectionData}){
     if (section == "personal"){

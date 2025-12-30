@@ -1,4 +1,4 @@
-import '../styles/BuilderSection.css'
+import '../../styles/BuilderSection.css'
 function PersonalSection({sectionData, setCvData}){
     function handleSubmit(e){
         e.preventDefault()
