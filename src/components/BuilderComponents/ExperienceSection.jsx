@@ -5,7 +5,7 @@ function ExperienceSection({sectionData, setCvData}){
     const [bullets, setBullets] = useState(sectionData.bullets)
     function handleSubmit(e){
         e.preventDefault()
-        const form = e.target.value
+        const form = e.target
         const title = form.title.value
         const start = form.start.value
         const end = form.end.value
@@ -65,7 +65,7 @@ function ExperienceSection({sectionData, setCvData}){
             </div>
             <div className='field'>
                 <label htmlFor="comp">Company: </label>
-                <input type='text' name='comp' id='comp' placeholder={sectionData.company}/>
+                <input type='text' name='company' id='company' placeholder={sectionData.company}/>
             </div>
             <div className='field'>
                 <label htmlFor="location">Location: </label>
