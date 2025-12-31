@@ -10,11 +10,12 @@ function ExperienceCollection({collectionData, setCvData}){
     return (
         <>
             {collectionData.map(section => (
-                <div>
+                <div key={section.key} className="section">
                     <ExperienceSection sectionData={section} setCvData={setCvData} />
                     <button type="button" onClick={() => deleteSection(section.id) }>Delete section</button>
                 </div>
             ))}
+            <button>Add Experience</button>
         </>
     )
     

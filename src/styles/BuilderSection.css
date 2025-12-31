@@ -8,6 +8,10 @@
     padding: 10px;
 }
 
+.experience {
+    border-bottom: 0px;
+}
+
 .field {
     display: flex;
     flex-direction: row;
