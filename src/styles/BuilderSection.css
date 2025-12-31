@@ -31,3 +31,9 @@ input {
     min-width: max-content;
     gap: 2px;
 }
+
+.AddSection {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
