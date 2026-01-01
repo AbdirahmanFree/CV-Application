@@ -155,9 +155,13 @@ function App() {
     <div className='App'>
         <Header />
         <div className='Content'>
-          <Builder cvData={cvData} setCvData={setCvData} />
-          <Resume cvData={cvData} />
-        </div>
+          <Builder cvData={cvData} setCvData={setCvData}/>
+          <div className='print-area'>
+            <Resume cvData={cvData}/>
+          </div>
+        </div> 
+        
+        
     </div>
   )
 }

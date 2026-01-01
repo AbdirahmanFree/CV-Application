@@ -1,4 +1,23 @@
+@media print {
+  /* Hide UI */
+  header,
+  .builder,
+  .print-btn {
+    display: none !important;
+  }
 
+  /* Remove layout-only borders */
+  .App,
+  .Content {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* KEEP resume borders */
+  .print-area * {
+    box-shadow: none; /* optional */
+  }
+}
 
 .App {
   display:flex;
@@ -13,6 +32,11 @@
 .content {
   margin: 10px;
   
+}
+
+.print-area{
+   height: 11in;
+  overflow: hidden;
 }
 
 .Content {
