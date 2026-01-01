@@ -89,9 +89,9 @@ function App() {
     'projects': [
       {
         'id': crypto.randomUUID(),
-        'title': '',
-        'technologies': '',
-        'bullets': [{'id': crypto.randomUUID(), 'text': ''}],
+        'title': 'Drop',
+        'tech': 'python, sckicit learn, javascript, c++, c#',
+        'bullets': [{'id': crypto.randomUUID(), 'text': 'nsnsnnsnsns'}],
       },
     ],
     'skills': [

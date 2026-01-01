@@ -2,7 +2,7 @@ import '../styles/Builder.css'
 import { EducationSection } from './BuilderComponents/EducationSection'
 import { ExperienceCollection } from './BuilderComponents/ExperienceCollection'
 import { PersonalSection } from './BuilderComponents/PersonalSection'
-
+import { ProjectCollection } from './BuilderComponents/ProjectCollection'
 
 
 function Builder({cvData, setCvData}){
@@ -11,7 +11,7 @@ function Builder({cvData, setCvData}){
             <PersonalSection sectionData={cvData.personal} setCvData={setCvData} />
             <EducationSection sectionData={cvData.education} setCvData={setCvData} />
             <ExperienceCollection collectionData={cvData.experience} setCvData={setCvData}/>
-            
+            <ProjectCollection collectionData={cvData.projects} setCvData={setCvData} />
         </div>
     )
 }

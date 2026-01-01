@@ -74,7 +74,7 @@ function ExperienceSection({sectionData, setCvData}){
             <div className='bullets'>
                 {bullets.map(bullet => (
                     <div className='field' key={bullet.id}>
-                        <label>Bullet: </label>
+                        <label htmlFor={bullet.id}>Bullet: </label>
                         <div className='bullet-container'>
                             <input id={bullet.id} name={bullet.id} type='text' placeholder={bullet.text}
                                 onChange={(e) => handleBulletChange(bullet.id, e.target.value)}
