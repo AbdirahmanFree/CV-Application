@@ -1,40 +1,41 @@
+import { SkillSection } from "./SkillSection";
 import '../../styles/BuilderSection.css'
 
-function SkillSection({sectionData, setCvData}){
-     function handleSubmit(e){
-        const form = e.target
-        const type = form.type.value
-        const skills = form.skills.value
+function SkillCollection({collectionData, setCvData}){
 
-        setCvData(prev => (
+    function deleteSection(id){
+        const newCollection = collectionData.filter(section => section.id != id)
+        setCvData(prev => ({...prev, 'skills': newCollection}))
+    }
+
+    function addSection(){
+        const newCollection = [
+            ...collectionData,
+            {
+                'id': crypto.randomUUID(),
+                'type' : '',
+                'skills' : '',
+            }
+         ]
+         setCvData( prev => (
             {
                 ...prev,
-                'skills': prev.skills.map(skill => (
-                    skill.id == sectionData.id ? {
-                        ...skill,
-                        'type': type,
-                        'skills': skills
-                    } : skill
-                ))
+                'skills': newCollection
             }
-        ))
-     }
-
-     return (
-        <form className='skill' onSubmit={handleSubmit}>
-            <div className='field'>
-                <label htmlFor="type">Skill Group: </label>
-                <input type='text' name='type' id='type' placeholder={sectionData.type}/>
+         ))
+    }
+    return (
+        <>
+            {collectionData.map(section => (
+                <div key={section.id} className="section">
+                    <SkillSection sectionData={section} setCvData={setCvData}/>
+                    <button type="button" onClick={() => deleteSection(section.id) }>Delete Experience</button>
+                </div>
+            ))}
+            <div className="AddSection">
+                <button type="button" onClick={addSection}>Add Skills</button>
             </div>
-            <div className='field'>
-                <label htmlFor="skills">Skills: </label>
-                <input type='text' name='skills' id='skills' placeholder={sectionData.skills}/>
-            </div>
-
-            <button type='submit'>Save</button>
-        </form>
-     )
-
+        </>
+    )
 }
-
-export {SkillSection}
+export {SkillCollection}
