@@ -133,9 +133,19 @@ function App() {
     'skills': [
       {
         'id': crypto.randomUUID(),
-        'skillGroup': '',
-        'skills': '',
+        'type': 'Programming Languages',
+        'skills': 'Python, SQL, JavaScript, Java, C#, C/C++',
       },
+      {
+        'id': crypto.randomUUID(),
+        'type': 'Databases',
+        'skills': 'PostgreSQL, MongoDB, SQL Server, Database Modeling, Query Optimization, Data Processing'
+      },
+      {
+        'id': crypto.randomUUID(),
+        'type': 'Web & Cloud',
+        'skills': 'Node.js, Express, React, RESTful APIs, Vercel, Render, Cloud Computing',
+      }
     ],
 
   
