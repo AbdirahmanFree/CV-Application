@@ -6,7 +6,7 @@ function ExperienceSection({sectionData}){
             <div className='heading'>Experience</div>
             <div className='section-content'>
                 {sectionData.map(experience => (
-                    <div>
+                    <div className='section-container'>
                         <div className='section-field'>
                             <span className='bold'>{experience.title}</span>
                             <span className='italic'>{experience.start} - {experience.end}</span>

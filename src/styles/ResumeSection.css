@@ -19,14 +19,13 @@ a {
    
 }
 .heading {
-    font-size: 18px;
+    font-size: 22px;
     width: 100%;
     border-bottom: 1px solid grey;
     margin: 0px;
 }
 
 .bold {
-    font-size: 16px;
     font-weight: 600;
 }
 
@@ -35,15 +34,30 @@ a {
     font-weight: 350;
 }
 
-.section-field {
+.section-field,.project-heading {
     display: flex;
-    justify-content: space-between;
     margin-top: 2px;
     margin-bottom: 2px
 }
+
+.section-field{
+    justify-content: space-between;
+}
+
+.project-heading{
+    justify-content: left;
+    gap: 2px;
+    margin-top: 5px;
+}
+
+.section-container {
+    margin-top: 5px;
+}
+
 
 ul {
     margin-top: 5px;
     padding: 0px;
     padding-left: 15px;
+    margin: 0px;
 }

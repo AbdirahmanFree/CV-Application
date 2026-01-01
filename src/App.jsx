@@ -89,10 +89,46 @@ function App() {
     'projects': [
       {
         'id': crypto.randomUUID(),
-        'title': 'Drop',
-        'tech': 'python, sckicit learn, javascript, c++, c#',
-        'bullets': [{'id': crypto.randomUUID(), 'text': 'nsnsnnsnsns'}],
+        'title': 'Distributed File Storage System',
+        'tech': 'C++, POSIX, TCP/IP, Multithreading',
+        'bullets': [
+          {
+            'id': crypto.randomUUID(), 
+            'text': 'Designed and implemented a distributed file storage system supporting concurrent clients, enabling reliable file upload, download, replication, and deletion across multiple nodes using low-level socket programming'
+          },
+          {
+            'id': crypto.randomUUID(), 
+            'text': 'Built a fault-tolerant architecture with heartbeat-based node monitoring and automatic failover, ensuring high availability and data consistency under node failures'
+          },
+          {
+            'id': crypto.randomUUID(), 
+            'text' : 'Optimized file chunking and transfer protocols to reduce network overhead and improve throughput, demonstrating strong understanding of systems programming and networking concepts'
+          }
+          
+
+
+        ],
       },
+      {
+        'id': crypto.randomUUID(),
+        'title': 'Real-Time Chat Application',
+        'tech': 'Java, Spring Boot, WebSockets, PostgreSQL',
+        'bullets': [
+          {
+            'id': crypto.randomUUID(),
+            'text': 'Developed a scalable real-time messaging platform using WebSockets to support low-latency, bidirectional communication between thousands of concurrent users',
+           },
+           {
+            'id': crypto.randomUUID(),
+            'text': 'Implemented secure authentication and authorization using JWTs and role-based access control, protecting private conversations and user data'
+           },
+           {
+            'id': crypto.randomUUID(),
+            'text': 'Designed relational database schemas and optimized queries to efficiently store message history, user presence, and conversation metadata'
+           }
+
+        ]
+      }
     ],
     'skills': [
       {
