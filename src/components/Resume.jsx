@@ -9,7 +9,7 @@ function Resume({cvData}){
     return (
         <>
     
-            <div className='resume-container'>
+            <div>
                 <PersonalSection sectionData={cvData.personal} />
                 <EducationSection sectionData={cvData.education} />
                 <ExperienceSection sectionData={cvData.experience} />

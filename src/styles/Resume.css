@@ -1,3 +1,4 @@
+/*
 .resume-container {
     overflow-wrap: break-word;
     overflow-y: hidden;
@@ -18,6 +19,8 @@
     margin: 50px auto;
     margin-right: 10px;
     position: sticky;
-    top: 24px; /* space from top */
+    top: 24px; 
     align-self: flex-start;
-}
+} */
+
+

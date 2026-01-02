@@ -15,9 +15,77 @@
   
 }
 
+
 .Content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+.print-area {
+    overflow-wrap: break-word;
+    overflow-y: hidden;
+    word-break: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: column;
+    width: 8.5in;
+    height: 11in;
+    
+    border: 1px solid grey;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: white;
+    margin: 50px auto;
+    margin-right: 10px;
+    position: sticky;
+    top: 24px; /* space from top */
+    align-self: flex-start;
+    border: none;
+    overflow: hidden;
+}
+
+@media print {
+  /* Only affects printing / PDF generation */
+
+  .print-area {
+    position: static !important; /* kill sticky */
+    top: 0 !important;           /* remove offset */
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+    width: 8.5in;
+    height: 11in;
+    overflow: hidden;
+  }
+
+  /* Disable sticky behavior for print */
+  .resume-wrapper {
+    position: static !important;
+  }
+
+  /* Remove browser margins */
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  /* Hide non-resume UI */
+  header,
+  .print-btn,
+  .builder {
+    display: none !important;
+  }
+}
+
+.resume-container {
+  position: relative;
+  border: 1px solid black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+}
+
 

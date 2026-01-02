@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import {Header} from './components/Header.jsx'
 import { Builder } from './components/Builder.jsx'
 import { Resume } from './components/Resume.jsx'
+import html2pdf from 'html2pdf.js';
 
 function App() {
   const [cvData, setCvData] = useState({
@@ -151,15 +152,34 @@ function App() {
   
   })
 
+  function handleDownLoad(){
+    
+      const element = document.querySelector(".print-area");
+
+      html2pdf()
+        .set({
+          margin: 0,
+          filename: "My_CV.pdf",
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+        }).from(element)
+        .save()
+
+
+  }
+
   return (
     <div className='App'>
         <Header />
         <div className='Content'>
           <Builder cvData={cvData} setCvData={setCvData}/>
-          <div className='print-area'>
-            <Resume cvData={cvData}/>
+          <div className='resume-container'>
+            <div className='print-area'>
+              <Resume cvData={cvData}/>
+            </div>
           </div>
         </div> 
+        <button type='button' onClick={handleDownLoad}>Download</button>
         
         
     </div>
